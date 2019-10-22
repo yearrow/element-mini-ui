@@ -1,24 +1,16 @@
 <!--
  * @Description: 未描述
  * @Author: danielmlc
- * @Date: 2019-09-11 09:26:19
- * @LastEditTime: 2019-10-21 20:54:27
+ * @Date: 2019-03-14 09:18:40
+ * @LastEditTime: 2019-10-22 09:54:37
  -->
 
-
-#### 基础
-
-
->  `ELEMENT-MINI` 基于`elementui V2.10.1` 版本的基础上摘取了部分基础的组件，并对部分组件功能样式做了定制。
-
-:::tip
-针对组件的属性调整请参考主题，你可以查看主题浏览组件的格式化样式。
-:::
+>  `element-mini-ui` 基于`element-ui V2.10.1` 版本的基础上摘取了部分基础的组件，并对部分组件功能样式做了定制和功能改动。
 
 
 目前现有组件列表：
 
-``` 
+```
     button
     radio
     checkbox
@@ -27,9 +19,8 @@
     select
     timepicker
     datepicker
+    Dropdown
     form
-    upload
-
     table
     tag 
     tree
@@ -46,19 +37,21 @@
     carousel
     message-box
     scrollbar
-    link
     divider
-    image
-
+    drawer
+    Progress
+    Badge
+    infiniteScroll
 ```
 
 #### 使用方式
 
 安装：
+
 ```bash
 
 yarn add  element-mini-ui 
-npm  i  element-mini-ui --save
+npm  i  element-mini-ui 
 
 ```
 html头部引入：
@@ -70,12 +63,17 @@ html头部引入：
 
 ```
 
-vue全局引入：
+vue全部引入：
 
 ```js
   
- import elementMiniUi from 'element-mini-ui'
+ import eleMini from 'element-mini-ui'
  import from 'element-mini-ui/lib/theme/index.css'
- Vue.use(elementMiniUi)
+ Vue.use(eleMini)
 
 ```
+
+仓库地址：
+- [element-mimi-ui](https://github.com/YLSoftWorkGroup/element-mini-ui)
+- [element-ui官网](https://element.eleme.cn/#/zh-CN/component/installation)
+

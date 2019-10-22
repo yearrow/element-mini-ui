@@ -1,3 +1,9 @@
+<!--
+ * @Description: 未描述
+ * @Author: danielmlc
+ * @Date: 2019-03-14 18:56:25
+ * @LastEditTime: 2019-10-22 10:01:43
+ -->
 <template>
   <div class="main">
     <div class="header">
@@ -6,7 +12,7 @@
           alt="logo">
       </div>
       <div class="title">
-        ELEMENT-MINI baseOn elementui 2.10.1
+        element-mini-ui baseOn element-ui
       </div>
     </div>
     <div class="content">

@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-03-14 09:18:40
- * @LastEditTime: 2019-10-19 14:29:43
+ * @LastEditTime: 2019-10-22 09:54:05
  -->
 
 >  `element-mini-ui` 基于`element-ui V2.10.1` 版本的基础上摘取了部分基础的组件，并对部分组件功能样式做了定制和功能改动。
@@ -63,7 +63,7 @@ html头部引入：
 
 ```
 
-vue全局引入：
+vue全部引入：
 
 ```js
   
@@ -72,4 +72,8 @@ vue全局引入：
  Vue.use(eleMini)
 
 ```
-# element-mini-ui
+
+仓库地址：
+- [element-mimi-ui](https://github.com/YLSoftWorkGroup/element-mini-ui)
+- [element-ui官网](https://element.eleme.cn/#/zh-CN/component/installation)
+

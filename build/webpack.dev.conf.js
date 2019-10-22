@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-03-14 16:01:03
- * @LastEditTime: 2019-10-21 20:37:04
+ * @LastEditTime: 2019-10-22 09:55:27
  */
 
 const path = require('path');
@@ -19,7 +19,7 @@ module.exports =  {
   devtool: 'cheap-module-source-map',
   devServer: {
     host: 'localhost',
-    port: 8033,
+    port: 8034,
     compress: true,
     open: false,
     inline: true,
