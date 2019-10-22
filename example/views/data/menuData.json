@@ -1,0 +1,27 @@
+[
+    {
+        "label":"基础",
+        "name":"base",
+        "url":"/base",
+        "icon":"el-icon-setting"
+    },
+    {
+        "label":"图标",
+        "name":"icon",
+        "url":"/icon",
+        "icon":"el-icon-icon"
+    },
+    {
+        "label":"主题",
+        "name":"theme",
+        "url":"/theme",
+        "icon":"el-icon-icon"
+    },
+    {
+        "label":"日志",
+        "name":"log",
+        "url":"/log",
+        "icon":"el-icon-filesearch"
+    }
+
+]
