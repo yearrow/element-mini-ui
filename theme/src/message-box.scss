@@ -37,22 +37,22 @@
 
   @include e(header) {
     position: relative;
-    padding: $--msgbox-padding-primary;
-    padding-bottom: 10px;
+    padding: 10px;
   }
 
   @include e(title) {
     padding-left: 0;
     margin-bottom: 0;
     font-size: $--messagebox-font-size;
+    font-weight: 500;
     line-height: 1;
     color: $--messagebox-title-color;
   }
 
   @include e(headerbtn) {
     position: absolute;
-    top: $--msgbox-padding-primary;
-    right: $--msgbox-padding-primary;
+    top: 10px;
+    right: 10px;
     padding: 0;
     border: none;
     outline: none;

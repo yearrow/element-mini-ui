@@ -21,6 +21,7 @@ $--color-primary: #2571a3 !default;
 $--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
 $--color-black: #000000 !default;
+
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -31,13 +32,13 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 /// color|1|Functional Color|1
-$--color-success: #44b29d !default;
+$--color-success: #239954 !default;
 /// color|1|Functional Color|1
-$--color-warning: #f5b041 !default;
+$--color-warning: #D68910 !default;
 /// color|1|Functional Color|1
-$--color-danger: #ec7062 !default;
+$--color-danger: #CB4335 !default;
 /// color|1|Functional Color|1
-$--color-info: #99a3a4 !default;
+$--color-info: #707B7C !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -80,6 +81,7 @@ $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
 /// borderRadius|1|Radius|0
@@ -105,7 +107,7 @@ $--fill-base: $--color-white !default;
 -------------------------- */
 $--font-path: 'fonts' !default;
 /// fontSize|1|Font Size|0
-$--font-size-extra-large: 20px !default;
+$--font-size-extra-large: 22px !default;
 /// fontSize|1|Font Size|0
 $--font-size-large: 18px !default;
 /// fontSize|1|Font Size|0
@@ -145,6 +147,10 @@ $--disabled-border-base: $--border-color-light !default;
 -------------------------- */
 $--icon-color: #666 !default;
 $--icon-color-base: $--color-info !default;
+
+
+
+
 
 /* Checkbox
 -------------------------- */
@@ -345,7 +351,7 @@ $--messagebox-title-color: $--color-text-primary !default;
 $--msgbox-width: 420px !default;
 $--msgbox-border-radius: 4px !default;
 /// fontSize||Font|1
-$--messagebox-font-size: $--font-size-large !default;
+$--messagebox-font-size: 14px !default;
 /// fontSize||Font|1
 $--messagebox-content-font-size: $--font-size-base !default;
 /// color||Color|0
@@ -428,7 +434,7 @@ $--input-font-color: $--color-text-regular !default;
 /// height||Other|4
 $--input-width: 140px !default;
 /// height||Other|4
-$--input-height: 40px !default;
+$--input-height: 36px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 /// borderRadius||Border|2
@@ -458,15 +464,15 @@ $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 /// fontSize||Font|1
 $--input-medium-font-size: 14px !default;
 /// height||Other|4
-$--input-medium-height: 36px !default;
+$--input-medium-height: 34px !default;
 /// fontSize||Font|1
 $--input-small-font-size: 13px !default;
 /// height||Other|4
-$--input-small-height: 32px !default;
+$--input-small-height: 30px !default;
 /// fontSize||Font|1
 $--input-mini-font-size: 12px !default;
 /// height||Other|4
-$--input-mini-height: 28px !default;
+$--input-mini-height: 26px !default;
 
 /* Cascader
 -------------------------- */
@@ -515,33 +521,33 @@ $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 10px !default;
+$--button-padding-vertical: 11px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 18px !default;
+$--button-padding-horizontal: 16px !default;
 
 /// fontSize||Font|1
-$--button-medium-font-size: $--font-size-small !default;
+$--button-medium-font-size: $--font-size-base !default;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 8px !default;
+$--button-medium-padding-vertical: 9px !default;
 /// padding||Spacing|3
-$--button-medium-padding-horizontal: 16px !default;
+$--button-medium-padding-horizontal: 14px !default;
 
 /// fontSize||Font|1
-$--button-small-font-size: 12px !default;
+$--button-small-font-size: 13px !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
 $--button-small-padding-vertical: 7px !default;
 /// padding||Spacing|3
-$--button-small-padding-horizontal: 13px !default;
+$--button-small-padding-horizontal: 12px !default;
 /// fontSize||Font|1
 $--button-mini-font-size: 12px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-mini-padding-vertical: 3px !default;
+$--button-mini-padding-vertical: 5px !default;
 /// padding||Spacing|3
-$--button-mini-padding-horizontal: 6px !default;
+$--button-mini-padding-horizontal: 10px !default;
 
 /// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;

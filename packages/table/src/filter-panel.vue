@@ -54,9 +54,7 @@
 
   export default {
     name: 'ElTableFilterPanel',
-
     mixins: [Popper, Locale],
-
     directives: {
       Clickoutside
     },

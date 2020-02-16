@@ -1,9 +1,3 @@
-/*
- * @Description: 未描述
- * @Author: danielmlc
- * @Date: 2019-03-14 09:18:41
- * @LastEditTime: 2019-09-15 22:38:19
- */
 import Vue from 'vue';
 import { isString, isObject } from 'element-mini-ui/src/utils/types';
 
@@ -109,10 +103,6 @@ export const arrayFind = function(arr, pred) {
   return idx !== -1 ? arr[idx] : undefined;
 };
 
-export const isFirefox = function() {
-  return !Vue.prototype.$isServer && !!window.navigator.userAgent.match(/firefox/i);
-};
-
 // coerce truthy value to array
 export const coerceTruthyValueToArray = function(val) {
   if (Array.isArray(val)) {
@@ -130,6 +120,10 @@ export const isIE = function() {
 
 export const isEdge = function() {
   return !Vue.prototype.$isServer && navigator.userAgent.indexOf('Edge') > -1;
+};
+
+export const isFirefox = function() {
+  return !Vue.prototype.$isServer && !!window.navigator.userAgent.match(/firefox/i);
 };
 
 export const autoprefixer = function(style) {
@@ -237,4 +231,11 @@ export function rafThrottle(fn) {
       locked = false;
     });
   };
+}
+
+export function objToArray(obj) {
+  if (Array.isArray(obj)) {
+    return obj;
+  }
+  return isEmpty(obj) ? [] : [obj];
 }

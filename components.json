@@ -49,5 +49,8 @@
   "icon": "./packages/icon/index.js",
   "row": "./packages/row/index.js",
   "col": "./packages/col/index.js",
+  "drawer": "./packages/drawer/index.js",
+  "step": "./packages/step/index.js",
+  "steps": "./packages/steps/index.js",
   "infiniteScroll": "./packages/infinite-scroll/index.js"
 }

@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-03-14 09:18:40
- * @LastEditTime: 2019-10-22 09:54:37
+ * @LastEditTime: 2020-02-17 00:00:20
  -->
 
 >  `element-mini-ui` 基于`element-ui V2.10.1` 版本的基础上摘取了部分基础的组件，并对部分组件功能样式做了定制和功能改动。
@@ -11,7 +11,7 @@
 目前现有组件列表：
 
 ```
-    button
+      button
     radio
     checkbox
     input 
@@ -35,12 +35,13 @@
     tooltip
     popover
     carousel
-    message-box
+    messageBox
     scrollbar
+    steps
     divider
     drawer
-    Progress
-    Badge
+    progress
+    badge
     infiniteScroll
 ```
 

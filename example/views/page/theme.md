@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-09-11 09:26:19
- * @LastEditTime: 2019-10-21 19:58:24
+ * @LastEditTime: 2020-02-16 00:54:41
  -->
 <script>
     export default {
@@ -50,10 +50,70 @@
           srcList: [
             'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
             'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
+          ],
+          drawer: false,
+          innerDrawer: false,
+          input1: '',
+          input2: '',
+          input3: '',
+          input4: '',
+          ruleForm: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+        rules: {
+          name: [
+            { required: true, message: '请输入活动名称', trigger: 'blur' },
+            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          region: [
+            { required: true, message: '请选择活动区域', trigger: 'change' }
+          ],
+          date1: [
+            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+          ],
+          date2: [
+            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+          ],
+          type: [
+            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+          ],
+          resource: [
+            { required: true, message: '请选择活动资源', trigger: 'change' }
+          ],
+          desc: [
+            { required: true, message: '请填写活动形式', trigger: 'blur' }
           ]
+        }
         }
       },
       methods: {
+        submitForm(formName) {
+          this.$refs[formName].validate((valid) => {
+            if (valid) {
+              alert('submit!');
+            } else {
+              console.log('error submit!!');
+              return false;
+            }
+          });
+        },
+        resetForm(formName) {
+          this.$refs[formName].resetFields();
+        },
+        drawerDandleClose(done) {
+          this.$confirm('还有未保存的工作哦确定关闭吗？')
+            .then(_ => {
+              done();
+            })
+            .catch(_ => {});
+        },
         handleClose(done) {
           this.$confirm('确认关闭？')
             .then(_ => {
@@ -70,7 +130,24 @@
           setTimeout(() => {
             loading.close();
           }, 2000);
-        }
+        },
+        openMsgB() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+      }
       }
     }
 </script>
@@ -89,90 +166,6 @@
 
 [[toc]]
 
-### color
-   
-   ##### 系统颜色
-   
-  
-
-   **主色**
-
-> [色值提取网站](https://www.colordrop.io/flat/)
-
-   系统中的主色
-
-<el-row :gutter="12">
-    <el-col :span="6">
-        <div class="doc-block" style="background:#2571a3;color:#fff;font-weight:500">Primary <br/> #2571a3</div>
-    </el-col>
-</el-row>
-
-  **辅助色**
-   
-   除了主色外的场景色，需要在不同的场景中使用（例如危险色表示危险的操作）。
-<el-row :gutter="12">
-    <el-col :span="6">
-        <div class="doc-block" style="background:#44b29d;color:#fff;font-weight:500">Success <br/> #44b29d</div>
-    </el-col>
-    <el-col :span="6">
-        <div class="doc-block" style="background:#f5b041;color:#fff;font-weight:500">Warning <br/> #f5b041</div>
-    </el-col>
-    <el-col :span="6">
-        <div class="doc-block" style="background:#ec7062;color:#fff;font-weight:500">Danger <br/> #ec7062</div>
-    </el-col>
-    <el-col :span="6">
-        <div class="doc-block" style="background:#99a3a4;color:#fff;font-weight:500">Info <br/> #99a3a4</div>
-    </el-col>
-</el-row>
-
-**中性色**
-
-中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
-<el-row >
-    <el-col :span="6">
-        <div class="doc-block-mid" style="background:#303133;color:#fff;font-weight:500">主要文字 <br/> #303133</div>
-        <div class="doc-block-mid" style="background:#606266;color:#fff;font-weight:500">常规文字 <br/> #606266</div>
-        <div class="doc-block-mid" style="background:#909399;color:#fff;font-weight:500">次要文字 <br/> #909399</div>
-        <div class="doc-block-mid" style="background:#C0C4CC;color:#fff;font-weight:500">占位文字 <br/> #C0C4CC</div>
-    </el-col>
-    <el-col :span="6">
-        <div class="doc-block-mid" style="background:#DCDFE6;color:#000;font-weight:500">一级边框 <br/> #DCDFE6</div>
-        <div class="doc-block-mid" style="background:#E4E7ED;color:#000;font-weight:500">二级边框 <br/> #E4E7ED</div>
-        <div class="doc-block-mid" style="background:#EBEEF5;color:#000;font-weight:500">三级边框 <br/> #EBEEF5</div>
-        <div class="doc-block-mid" style="background:#F2F6FC;color:#000;font-weight:500">四级边框 <br/> #F2F6FC</div>
-    </el-col>
-</el-row>
-
-#### 打包器全局系统色配置 `    
-
-```js
-const primary = '#2571a3'
-const success = '#44b29d'
-const info = '#99a3a4'
-const warning = '#f5b041'
-const danger = '#ec7062'
-const fontPrimary = '#303133'
-const fontSecond = '#606266'
-const fontHelper = '#909399'
-const border = '#DCDFE6'
-const borderDark = '#EBEEF5'
-const theme = '#2e4053' // 随系统变化(实物量站点主题)
-const background = '#eaedef' // (实物量站点主题)
-const colors = {
-  primary,
-  success,
-  info,
-  warning,
-  danger,
-  fontPrimary,
-  fontSecond,
-  fontHelper,
-  border,
-  borderDark,
-  theme,
-  background
-}
-```
 
 ### button
 
@@ -245,6 +238,23 @@ const colors = {
   <el-button size="mini" type="text">超小按钮</el-button>
 </el-row>
 
+
+按钮组    
+<div style="margin: 20px 0">
+<el-button-group>
+  <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
+  <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+</el-button-group>
+<br/>
+<p>微小型</p>
+<el-button-group>
+  <el-button type="primary" size="mini" icon="el-icon-edit">编辑</el-button>
+  <el-button type="info" size="mini" icon="el-icon-share">分享</el-button>
+  <el-button type="danger" size="mini" icon="el-icon-delete">删除</el-button>
+</el-button-group>
+</div>
+
+
 ```
 :::
 
@@ -252,6 +262,188 @@ const colors = {
 
 ---
 
+
+### input
+
+:::tip
+1. 调整尺寸。
+:::
+
+示例
+
+ :::demo
+```html
+<el-row :gutter="20">
+  <el-col :span="6"> 
+    <el-input
+      placeholder="请输入内容"
+      suffix-icon="el-icon-date"
+      v-model="input1">
+    </el-input>
+  </el-col>
+  <el-col :span="6"> 
+    <el-input
+      size="medium"
+      placeholder="请输入内容"
+      suffix-icon="el-icon-date"
+      v-model="input2">
+    </el-input>
+  </el-col>
+  <el-col :span="6"> 
+    <el-input
+      size="small"
+      placeholder="请输入内容"
+      suffix-icon="el-icon-date"
+      v-model="input3">
+    </el-input>
+  </el-col>
+  <el-col :span="6"> 
+    <el-input
+      size="mini"
+      placeholder="请输入内容"
+      suffix-icon="el-icon-date"
+      v-model="input4">
+    </el-input>
+  </el-col>
+</el-row>
+
+<script>
+export default {
+  data() {
+    return {
+      input1: '',
+      input2: '',
+      input3: '',
+      input4: ''
+    }
+  }
+}
+</script>
+
+```
+::: 
+
+---
+
+### form表单
+
+
+:::tip
+1. 调整样式
+:::
+
+示例
+
+ :::demo
+```html
+
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" size="small" status-icon style="width:500px;">
+  <el-form-item label="活动名称" prop="name">
+    <el-input v-model="ruleForm.name"></el-input>
+  </el-form-item>
+  <el-form-item label="活动区域" prop="region">
+    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+      <el-option label="区域一" value="shanghai"></el-option>
+      <el-option label="区域二" value="beijing"></el-option>
+    </el-select>
+  </el-form-item>
+  <el-form-item label="活动时间" required>
+    <el-col :span="11">
+      <el-form-item prop="date1">
+        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+      </el-form-item>
+    </el-col>
+    <el-col class="line" :span="2">-</el-col>
+    <el-col :span="11">
+      <el-form-item prop="date2">
+        <el-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
+      </el-form-item>
+    </el-col>
+  </el-form-item>
+  <el-form-item label="活动性质" prop="type">
+    <el-checkbox-group v-model="ruleForm.type">
+      <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
+      <el-checkbox label="地推活动" name="type"></el-checkbox>
+      <el-checkbox label="线下主题活动" name="type"></el-checkbox>
+      <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
+    </el-checkbox-group>
+  </el-form-item>
+  <el-form-item label="特殊资源" prop="resource">
+    <el-radio-group v-model="ruleForm.resource">
+      <el-radio label="线上品牌商赞助"></el-radio>
+      <el-radio label="线下场地免费"></el-radio>
+    </el-radio-group>
+  </el-form-item>
+  <el-form-item label="活动形式" prop="desc">
+    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+  </el-form-item>
+  <el-form-item>
+    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+    <el-button @click="resetForm('ruleForm')">重置</el-button>
+  </el-form-item>
+</el-form>
+<script>
+  export default {
+    data() {
+      return {
+        ruleForm: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+        rules: {
+          name: [
+            { required: true, message: '请输入活动名称', trigger: 'blur' },
+            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          region: [
+            { required: true, message: '请选择活动区域', trigger: 'change' }
+          ],
+          date1: [
+            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+          ],
+          date2: [
+            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+          ],
+          type: [
+            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+          ],
+          resource: [
+            { required: true, message: '请选择活动资源', trigger: 'change' }
+          ],
+          desc: [
+            { required: true, message: '请填写活动形式', trigger: 'blur' }
+          ]
+        }
+      };
+    },
+    methods: {
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+    }
+  }
+</script>
+
+```
+::: 
+
+---
 
 ### dialog
 
@@ -271,16 +463,17 @@ const colors = {
 <el-dialog
   title="提示"
   :visible.sync="dialogVisible"
-  width="90%"
-  :before-close="handleClose">
-  <div style="height:75vh">
+  width="75%"
+  :before-close="handleClose"
+  >
+  <div style="height:60vh;">
      <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
-        <el-button size="small" @click="dialogVisible = false">取 消</el-button>
-        <el-button size="small" type="primary" @click="dialogVisible = false">确 定</el-button>
-      </span>
+     
   </div>
- 
+  <span slot="footer" class="dialog-footer">
+    <el-button size="small" @click="dialogVisible = false">取 消</el-button>
+    <el-button size="small" type="primary" @click="dialogVisible = false">确 定</el-button>
+  </span>
 </el-dialog>
 
 <script>
@@ -307,6 +500,51 @@ const colors = {
 
 ---
 
+
+
+### messageBox
+
+:::tip
+
+1. 调整了messageBox的padding边距。
+2. messageBox
+:::
+
+示例
+
+ :::demo
+```html
+
+ <el-button type="text" @click="openMsgB">点击打开 Message Box</el-button>
+
+<script>
+  export default {
+    methods: {
+      openMsgB() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+      }
+    }
+  }
+</script>
+
+```
+::: 
+
+---
 
 
 
@@ -360,7 +598,7 @@ const colors = {
 ### table
 
 :::tip
-1. 调整了table hover的背景色。
+1. 更新2.13.0版本的table组件
 :::
 
 :::demo 
@@ -552,3 +790,57 @@ export default {
 ```
 :::
 
+
+
+### drawer
+
+:::tip
+1. 新增了2.13.0版本的抽屉组件
+:::
+
+:::demo 
+```html
+<template>
+<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+  点我打开
+</el-button>
+
+<el-drawer
+  title="我是外面的 Drawer"
+  :visible.sync="drawer"
+  size="50%">
+  <div>
+    <el-button @click="innerDrawer = true">打开里面的!</el-button>
+    <el-drawer
+      :append-to-body="true"
+      :with-header="false"
+      :before-close="drawerDandleClose"
+      :visible.sync="innerDrawer">
+      <p>_(:зゝ∠)_</p>
+    </el-drawer>
+  </div>
+</el-drawer>
+</template>
+
+<script>
+  export default {
+     data() {
+      return {
+        drawer: false,
+        innerDrawer: false,
+      };
+    },
+    methods: {
+      drawerDandleClose(done) {
+        this.$confirm('还有未保存的工作哦确定关闭吗？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      }
+    }
+  }
+</script>
+
+```
+:::

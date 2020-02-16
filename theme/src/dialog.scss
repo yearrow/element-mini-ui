@@ -32,14 +32,13 @@
 
   @include e(header) {
     padding: 5px 10px;
-    background-color: $--color-primary;
-    padding-bottom: 10px;
+    background-color: $--color-primary-light-2;
   }
 
   @include e(headerbtn) {
     position: absolute;
-    top: $--dialog-padding-primary;
-    right: $--dialog-padding-primary;
+    top: 10px;
+    right: 10px;
     padding: 0;
     background: transparent;
     border: none;
@@ -48,12 +47,12 @@
     font-size: $--message-close-size;
 
     .el-dialog__close {
-      color: $--color-info;
+      color: #fff;
     }
 
     &:focus, &:hover {
       .el-dialog__close {
-        color: $--color-info;
+        color: #eee;
       }
     }
   }
@@ -61,12 +60,12 @@
   @include e(title) {
     line-height: $--dialog-font-line-height;
     font-size: $--dialog-title-font-size;
-    font-weight: 600;
+    font-weight: 500;
     color: #fff;
   }
 
   @include e(body) {
-    padding: 20px 20px;
+    padding: $--dialog-padding-primary;
     color: $--color-text-regular;
     font-size: $--dialog-content-font-size;
     word-break: break-all;
