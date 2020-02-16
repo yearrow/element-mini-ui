@@ -69,7 +69,7 @@ vue全部引入：
 ```js
   
  import eleMini from 'element-mini-ui'
- import from 'element-mini-ui/lib/theme/index.css'
+ import  'element-mini-ui/lib/theme/index.css'
  Vue.use(eleMini)
 
 ```
