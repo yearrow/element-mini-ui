@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-09-11 09:26:19
- * @LastEditTime: 2020-02-23 14:34:19
+ * @LastEditTime: 2020-02-23 14:56:14
  -->
 <script>
     export default {
@@ -640,6 +640,7 @@ export default {
 
 :::tip
 1. 更新2.13.0版本的table组件
+2. 头部样式调整
 :::
 
 :::demo 
@@ -879,6 +880,8 @@ export default {
 
 :::tip
 1. 新增了2.13.0版本的抽屉组件
+2. 调整头部样式
+3. 调整内容内边距
 :::
 
 :::demo 
