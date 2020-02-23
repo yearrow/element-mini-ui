@@ -2,29 +2,62 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-09-11 09:26:19
- * @LastEditTime: 2020-02-16 00:54:41
+ * @LastEditTime: 2020-02-23 14:34:19
  -->
 <script>
     export default {
       data() {
         return {
           inputNumValue:0.001,
-          tableData: [{
+           tableData: [{
+            date: '2016-05-03',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
             date: '2016-05-02',
-            name: '王小虎2',
-            address: '上海市普陀区金沙江路 1518 弄'
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
           }, {
             date: '2016-05-04',
-            name: '王小虎3',
-            address: '上海市普陀区金沙江路 1517 弄'
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
           }, {
             date: '2016-05-01',
-            name: '王小虎4',
-            address: '上海市普陀区金沙江路 1519 弄'
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
           }, {
-            date: '2016-05-03',
-            name: '王小虎5',
-            address: '上海市普陀区金沙江路 1516 弄'
+            date: '2016-05-08',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-06',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-07',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
           }],
           tabPosition: 'left',
           options: [{
@@ -214,16 +247,16 @@
 大小型号
 
 <el-row>
-  <el-button>默认按钮</el-button>
-  <el-button size="medium">中等按钮</el-button>
-  <el-button size="small">小型按钮</el-button>
-  <el-button size="mini">超小按钮</el-button>
+  <el-button type="primary">默认按钮</el-button>
+  <el-button type="primary" size="medium">中等按钮</el-button>
+  <el-button type="primary" size="small">小型按钮</el-button>
+  <el-button type="primary" size="mini">超小按钮</el-button>
 </el-row>
 <el-row>
   <el-button round>默认按钮</el-button>
-  <el-button size="medium" round>中等按钮</el-button>
-  <el-button size="small" round>小型按钮</el-button>
-  <el-button size="mini" round>超小按钮</el-button>
+  <el-button type="primary" size="medium" round>中等按钮</el-button>
+  <el-button type="primary" size="small" round>小型按钮</el-button>
+  <el-button type="primary" size="mini" round>超小按钮</el-button>
 </el-row>
 <el-row>
   <el-button circle icon="el-icon-edit" ></el-button>
@@ -337,7 +370,15 @@ export default {
  :::demo
 ```html
 
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" size="small" status-icon style="width:500px;">
+<el-form 
+  :model="ruleForm" 
+  :rules="rules" 
+  ref="ruleForm" 
+  label-width="100px" 
+  class="demo-ruleForm" 
+  size="small" 
+  status-icon 
+  style="width:500px;">
   <el-form-item label="活动名称" prop="name">
     <el-input v-model="ruleForm.name"></el-input>
   </el-form-item>
@@ -604,62 +645,104 @@ export default {
 :::demo 
 ```html
 <template>
-    <el-table
-      size="small"
-      border
-      :data="tableData"
-      style="width: 100%">   
-      <el-table-column type="expand">
-        <template slot-scope="props">
-          <el-form label-position="left" inline class="demo-table-expand">
-            <el-form-item label="姓名">
-              <span>{{ props.row.name }}</span>
-            </el-form-item>
-          </el-form>
-        </template>
-      </el-table-column> 
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
+  <el-table
+    :data="tableData"
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="150">
+    </el-table-column>
+    <el-table-column label="配送信息">
       <el-table-column
         prop="name"
         label="姓名"
-        width="180">
+        width="120">
       </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
+      <el-table-column label="地址">
+        <el-table-column
+          prop="province"
+          label="省份"
+          width="120">
+        </el-table-column>
+        <el-table-column
+          prop="city"
+          label="市区"
+          width="120">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址"
+          width="300">
+        </el-table-column>
+        <el-table-column
+          prop="zip"
+          label="邮编"
+          width="120">
+        </el-table-column>
       </el-table-column>
-    </el-table>
-  </template>
+    </el-table-column>
+  </el-table>
+</template>
 
-  <script>
-    export default {
-      data() {
-        return {
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎1',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎2',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎3',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
-        }
+<script>
+  export default {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }]
       }
     }
-  </script>
+  }
+</script>
 ```
 :::
 
@@ -837,6 +920,36 @@ export default {
             done();
           })
           .catch(_ => {});
+      }
+    }
+  }
+</script>
+
+```
+:::
+
+
+
+### divider
+
+:::tip
+1. 更新分割线边界线
+:::
+
+:::demo 
+```html
+  <div>
+    <span>青春是一个短暂的美梦, 当你醒来时, 它早已消失无踪</span>
+    <el-divider></el-divider>
+    <span>少量的邪恶足以抵消全部高贵的品质, 害得人声名狼藉</span>
+     <el-divider content-position="right"><i class="el-icon-delete"></i></el-divider>
+    <span>少量的邪恶足以抵消全部高贵的品质, 害得人声名狼藉</span>
+  </div>
+
+<script>
+  export default {
+     data() {
+      return {
       }
     }
   }

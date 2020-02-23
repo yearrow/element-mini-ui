@@ -641,12 +641,12 @@ $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
 $--table-font-color: $--color-text-regular !default;
 /// color||Color|0
-$--table-header-font-color: $--color-text-secondary !default;
+$--table-header-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--table-row-hover-background-color: $--color-primary-light-9 !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 /// color||Color|0
-$--table-header-background-color: $--color-white !default;
+$--table-header-background-color:#FAFAFA !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
 /* Pagination
@@ -971,7 +971,7 @@ $--avatar-small-size: 28px !default;
 --------------------------*/
 $--sm: 768px !default;
 $--md: 992px !default;
-$--lg: 1450px !default;
+$--lg: 1200px !default;
 $--xl: 1920px !default;
 
 $--breakpoints: (
