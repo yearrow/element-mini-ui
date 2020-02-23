@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'element-icons';
-  src: url('#{$--font-path}/iconfont.eot?t=1553934092668'); /* IE9 */
+  src: url('#{$--font-path}/iconfont.eot?t=1582461568022'); /* IE9 */
   src:
-      url('#{$--font-path}/iconfont.woff?t=1553934092668') format('woff'),
-      url('#{$--font-path}/iconfont.ttf?t=1553934092668') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-      url('#{$--font-path}/iconfont.svg?t=1553934092668#elment') format('svg'); /* iOS 4.1- */
+      url('#{$--font-path}/iconfont.woff?t=1582461568022') format('woff'),
+      url('#{$--font-path}/iconfont.ttf?t=1582461568022') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url('#{$--font-path}/iconfont.svg?t=1582461568022#elment') format('svg'); /* iOS 4.1- */
   font-weight: normal;
   font-style: normal
 }
@@ -26,6 +26,38 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-icon-cancel:before {
+  content: "\e611";
+}
+
+.el-icon-excel:before {
+  content: "\e62c";
+}
+
+.el-icon-save:before {
+  content: "\e60c";
+}
+
+.el-icon-check-file:before {
+  content: "\e63b";
+}
+
+.el-icon-word:before {
+  content: "\edd5";
+}
+
+.el-icon-undo:before {
+  content: "\e60f";
+}
+
+.el-icon-submit:before {
+  content: "\e63d";
+}
+
+.el-icon-approve:before {
+  content: "\edd6";
 }
 
 .el-icon-check:before {

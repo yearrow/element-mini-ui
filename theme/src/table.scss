@@ -150,21 +150,21 @@
 
   @include m(medium) {
     th, td {
-      padding: 10px 0;
+      padding: 8px 0;
     }
   }
 
   @include m(small) {
     font-size: 12px;
     th, td {
-      padding: 8px 0;
+      padding: 6px 0;
     }
   }
 
   @include m(mini) {
     font-size: 12px;
     th, td {
-      padding: 6px 0;
+      padding: 4px 0;
     }
   }
 

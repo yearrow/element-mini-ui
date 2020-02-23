@@ -29,7 +29,72 @@
 </style>
 
 <ul class="dib-box">
-          
+
+
+<li class="dib">
+<span class="icon elment el-icon-cancel"></span>
+<div class="name">
+    cancel
+</div>
+<div class="code-name">.el-icon-cancel
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-excel"></span>
+<div class="name">
+    excel
+</div>
+<div class="code-name">.el-icon-excel
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-save"></span>
+<div class="name">
+    save
+</div>
+<div class="code-name">.el-icon-save
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-check-file"></span>
+<div class="name">
+    check-file
+</div>
+<div class="code-name">.el-icon-check-file
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-word"></span>
+<div class="name">
+    word
+</div>
+<div class="code-name">.el-icon-word
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-undo"></span>
+<div class="name">
+    undo
+</div>
+<div class="code-name">.el-icon-undo
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-submit"></span>
+<div class="name">
+    submit
+</div>
+<div class="code-name">.el-icon-submit
+</div>
+</li>
+<li class="dib">
+<span class="icon elment el-icon-approve"></span>
+<div class="name">
+    approve
+</div>
+<div class="code-name">.el-icon-approve
+</div>
+</li>
 <li class="dib">
 <span class="icon elment el-icon-check"></span>
 <div class="name">

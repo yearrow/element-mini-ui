@@ -1,6 +1,6 @@
 {
   "name": "element-mini-ui",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "A Component Library baseOn element-ui",
   "main": "lib/element-mini-ui.common.js",
   "files": [
