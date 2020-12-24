@@ -63,7 +63,7 @@
       margin-right: 8px;
     }
     &:hover {
-      background-color: $--tree-node-hover-background-color;
+      background-color: $--color-warning-light;
     }
 
     .el-tree.is-dragging & {

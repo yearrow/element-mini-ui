@@ -23,9 +23,9 @@
     &:hover,
     &:focus,
     &:active {
-      color: mix($--color-white, $color, 40%);
-      background-color: mix($--color-white, $color, 90%);
-      border-color: mix($--color-white, $color, 80%);
+      color: mix($--color-white, $color, 70%);
+      background-color: mix($--color-white, $color, 95%);
+      border-color: mix($--color-white, $color, 90%);
     }
   }
 }

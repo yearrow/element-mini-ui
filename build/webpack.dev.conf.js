@@ -37,7 +37,6 @@ module.exports =  {
       modules:false,
       errors: true,
       warnings: true,
-
   },
   optimization: {
     runtimeChunk: {

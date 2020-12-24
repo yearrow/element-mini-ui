@@ -2,7 +2,7 @@
  * @Description: 未描述
  * @Author: danielmlc
  * @Date: 2019-09-11 09:26:19
- * @LastEditTime: 2020-02-23 21:07:01
+ * @LastEditTime: 2020-05-29 14:15:02
  -->
 <script>
     export default {
@@ -123,10 +123,51 @@
           desc: [
             { required: true, message: '请填写活动形式', trigger: 'blur' }
           ]
-        }
+        },
+          props: {
+            label: 'name',
+            children: 'zones'
+          },
+          count: 1
         }
       },
       methods: {
+        handleCheckChange(data, checked, indeterminate) {
+        console.log(data, checked, indeterminate);
+      },
+        handleNodeClick(data) {
+          console.log(data);
+        },
+        loadNode(node, resolve) {
+          if (node.level === 0) {
+            return resolve([{ name: 'region1' }, { name: 'region2' }]);
+          }
+          if (node.level > 3) return resolve([]);
+
+          var hasChild;
+          if (node.data.name === 'region1') {
+            hasChild = true;
+          } else if (node.data.name === 'region2') {
+            hasChild = false;
+          } else {
+            hasChild = Math.random() > 0.5;
+          }
+
+          setTimeout(() => {
+            var data;
+            if (hasChild) {
+              data = [{
+                name: 'zone' + this.count++
+              }, {
+                name: 'zone' + this.count++
+              }];
+            } else {
+              data = [];
+            }
+
+            resolve(data);
+          }, 500);
+        },
         handleClick(row) {
           console.log(row);
         },
@@ -168,21 +209,21 @@
           }, 2000);
         },
         openMsgB() {
-        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          this.$message({
-            type: 'success',
-            message: '删除成功!'
-          });
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消删除'
-          });          
-        });
+            this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              type: 'warning'
+            }).then(() => {
+              this.$message({
+                type: 'success',
+                message: '删除成功!'
+              });
+            }).catch(() => {
+              this.$message({
+                type: 'info',
+                message: '已取消删除'
+              });          
+            });
       }
       }
     }
@@ -223,7 +264,6 @@
   <el-button type="warning">警告按钮</el-button>
   <el-button type="danger">危险按钮</el-button>
 </div>
-
 
 附加样式
 
@@ -293,8 +333,6 @@
 
 ```
 :::
-
-
 
 ---
 
@@ -907,6 +945,7 @@ export default {
 <el-drawer
   title="我是外面的 Drawer"
   :visible.sync="drawer"
+  direction="ttb"
   size="50%">
   <div>
     <el-button @click="innerDrawer = true">打开里面的!</el-button>
@@ -973,3 +1012,77 @@ export default {
 
 ```
 :::
+
+
+
+### tree
+
+:::tip
+1. 树控件优化
+:::
+
+:::demo 
+```html
+ <el-tree
+  :props="props"
+  :load="loadNode"
+  lazy
+  show-checkbox
+  @check-change="handleCheckChange">
+</el-tree>
+
+<script>
+  export default {
+    data() {
+      return {
+        props: {
+          label: 'name',
+          children: 'zones'
+        },
+        count: 1
+      };
+    },
+    methods: {
+      handleCheckChange(data, checked, indeterminate) {
+        console.log(data, checked, indeterminate);
+      },
+      handleNodeClick(data) {
+        console.log(data);
+      },
+      loadNode(node, resolve) {
+        if (node.level === 0) {
+          return resolve([{ name: 'region1' }, { name: 'region2' }]);
+        }
+        if (node.level > 3) return resolve([]);
+
+        var hasChild;
+        if (node.data.name === 'region1') {
+          hasChild = true;
+        } else if (node.data.name === 'region2') {
+          hasChild = false;
+        } else {
+          hasChild = Math.random() > 0.5;
+        }
+
+          setTimeout(() => {
+            var data;
+            if (hasChild) {
+              data = [{
+                name: 'zone' + this.count++
+              }, {
+                name: 'zone' + this.count++
+              }];
+            } else {
+              data = [];
+            }
+
+            resolve(data);
+          }, 500);
+        }
+      }
+    };
+  </script>
+
+```
+:::
+

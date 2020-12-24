@@ -11,7 +11,7 @@
   flex: 1;
   width: 100%;
   max-width: 100%;
-  background-color: $--color-white;
+  background-color  : $--color-white;
   font-size: 14px;
   color: $--table-font-color;
 
@@ -25,9 +25,7 @@
     align-items: center;
   }
 
-  @include e(empty-text) {
-    // min-height doesn't work in IE10 and IE11 https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
-    // set empty text line height up to contrainer min-height as workaround.
+  @include e(empty-text) { 
     line-height: 60px;
     width: 50%;
     color: $--color-text-secondary;
